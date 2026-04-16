@@ -1,8 +1,10 @@
-displayName: "[orange]Expanded [lightgray]Industries"
-name: "EI"
-author: "WMF Industries"
-main: "ExpandedIndustries.ExpandedIndustries"
-description: "Some content for people to enjoy :>"
-version: "1.8.5"
-minGameVersion: 157.1
-java: true
+{
+    displayName: "CoMbInAtIoN",
+    name: "EI",
+    author: "DLlord",
+    main: "Combination.Combination",
+    description: "I took all the best from other mods to get new experience of vanilla mindustry!",
+    version: "2.0",
+    minGameVersion: 157.1,
+    java: true
+}

@@ -1,0 +1,11 @@
+{
+  "color": "a1b46e",
+  "explosiveness": 0,
+  "flammability": 0,
+  "heatCapacity": 0.5,
+  "viscosity": 0.6,
+  "temperature": 0.5,
+  "internalName": "acid",
+  "effect": "acidic",
+  "research": "water"
+}

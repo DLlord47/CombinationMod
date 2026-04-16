@@ -1,0 +1,164 @@
+{
+  "type": "ItemTurret",
+  "name": "Fear",
+  "size": 8,
+  "health": 8660,
+  "maxAmmo": 20,
+  "ammoPerShot": 20,
+  "reload": 500,
+  "range": 1000,
+  "shootLength": 8,
+  "consumes": {
+    "power": 70,
+    "coolant": {
+      "amount": 0.2
+    }
+  },
+  "ammoUseEffect": "casing3Double",
+  "coolantMultiplier": 0.5,
+  "targetAir": true,
+  "targetGround": true,
+  "recoilAmount": 6,
+  "shootShake": 6,
+  "inaccuracy": 0,
+  "restitution": 0.009,
+  "cooldown": 0.009,
+  "rotateSpeed": 1,
+  "shootSound": "shootForeshadow",
+  "ammoTypes": {
+    "surge-alloy": {
+      "type": "pointBulletType",
+      "damage": 6000,
+      "shootEffect": "instShoot",
+      "status": "surge-charge",
+      "statusDuration": 100,
+      "lightning": 8,
+      "lightningLength": 17,
+      "lightningDamage": 250,
+      "hitEffect": {
+        "type": "multiEffect",
+        "effects": [
+          {
+            "type": "ParticleEffect",
+            "lightOpacity": 0,
+            "particles": 10,
+            "length": 50,
+            "lifetime": 50,
+            "interp": "circleOut",
+            "sizeInterp": "pow5In",
+            "sizeFrom": 5,
+            "sizeTo": 0,
+            "colorFrom": "F3E979FF",
+            "colorTo": "F3E979d8"
+          },
+          {
+            "type": "ParticleEffect",
+            "lightOpacity": 0,
+            "particles": 10,
+            "length": 40,
+            "lifetime": 40,
+            "interp": "circleOut",
+            "sizeInterp": "pow5In",
+            "sizeFrom": 3,
+            "sizeTo": 0,
+            "colorFrom": "F3E979FF",
+            "colorTo": "F3E979d8"
+          },
+          {
+            "type": "ParticleEffect",
+            "lightOpacity": 0,
+            "particles": 10,
+            "length": 30,
+            "lifetime": 30,
+            "interp": "circleOut",
+            "sizeInterp": "pow5In",
+            "sizeFrom": 2.5,
+            "sizeTo": 0,
+            "colorFrom": "F3E979FF",
+            "colorTo": "F3E979d8"
+          },
+          {
+            "type": "ParticleEffect",
+            "line": true,
+            "particles": 15,
+            "offset": 20,
+            "lifetime": 30,
+            "length": 100,
+            "baseLength": -15,
+            "cone": -360,
+            "lenFrom": 10,
+            "lenTo": 10,
+            "colorFrom": "F3E979FF",
+            "colorTo": "D99F6BFF"
+          },
+          {
+            "type": "WaveEffect",
+            "lifetime": 25,
+            "sizeFrom": 0,
+            "sizeTo": 75,
+            "strokeFrom": 4,
+            "strokeTo": 0,
+            "lightColor": "F3E979FF",
+            "colorFrom": "F3E979FF",
+            "colorTo": "D99F6BFF"
+          },
+          {
+            "type": "ParticleEffect",
+            "particles": 1,
+            "sizeFrom": 35,
+            "sizeTo": 0,
+            "length": 0,
+            "interp": "swingIn",
+            "lifetime": 25,
+            "region": "mod-combination-star",
+            "lightColor": "F3E979FF",
+            "colorFrom": "F3E979FF",
+            "colorTo": "F3E979FF"
+          },
+          {
+            "type": "ParticleEffect",
+            "particles": 1,
+            "sizeFrom": 12,
+            "sizeTo": 0,
+            "length": 0,
+            "interp": "swingIn",
+            "lifetime": 25,
+            "region": "mod-combination-star",
+            "lightColor": "F3E979FF",
+            "colorFrom": "FFFFFFF",
+            "colorTo": "FFFFFFF"
+          }
+        ]
+      },
+      "speed": 1000,
+      "hitShake": 7,
+      "trailSpacing": 30,
+      "colorFrom": "F3E979FF",
+      "colorTo": "D99F6BFF",
+      "hitColor": "F3E979FF",
+      "trailEffect": {
+        "type": "ParticleEffect",
+        "particles": 1,
+        "length": 0,
+        "lifetime": 35,
+        "sizeFrom": 45,
+        "region": "mod-combination-wide",
+        "colorFrom": "F3E979FF",
+        "colorTo": "D99F6BFF"
+      },
+      "despawnEffect": "none",
+      "splashDamageRadius": 1,
+      "buildingDamageMultiplier": 0.50
+    }
+  },
+  "requirements": [
+    "titanium/1750",
+    "thorium/2400",
+    "plastanium/2650",
+    "copper/4950",
+    "surge-alloy/3000",
+    "silicon/2000"
+  ],
+  "category": "turret",
+  "research": "augur"
+}
