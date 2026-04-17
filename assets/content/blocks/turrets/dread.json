@@ -27,7 +27,7 @@
   "shootSound": "shootSpectre",
   "ammoTypes": {
     "thorium": {
-      "sprite": "mod-combination-gauss-bullet",
+      "sprite": "cm-gauss-bullet",
       "speed": 8,
       "height": 42,
       "width": 25,
