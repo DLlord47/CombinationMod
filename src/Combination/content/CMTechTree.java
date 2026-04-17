@@ -65,7 +65,7 @@ public class CMTechTree extends TechTree{
 
     public static void load(){
         //serpulo
-        if(settings.getBool("ei-replaceroot", false)){
+        if(settings.getBool("cm-replaceroot", false)){
             changeRoot(Planets.serpulo, coreFrag);
             moveNode(Blocks.coreFoundation, Blocks.coreShard);
             addObjectives(Blocks.coreShard, new Objectives.OnSector(SectorPresets.crateredBattleground));

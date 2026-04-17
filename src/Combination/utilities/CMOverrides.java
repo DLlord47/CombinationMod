@@ -24,7 +24,7 @@ import static Combination.content.CMItems.*;
 import static Combination.content.CMLiquids.*;
 import static Combination.content.CMBulletTypes.*;
 
-public class EIOverrides{
+public class CMOverrides {
     static ObjectSet<String> modBlacklist = ObjectSet.with(
         "EI"
     );
