@@ -179,27 +179,27 @@ public class CMBlocks {
 
             arrowSpacing = 6f;
         }};
-        thoriumBridge = new CustomItemBridge("thorium-bridge"){{
-            requirements(Category.distribution, with(copper, 8, titanium, 6, starium, 2));
-
-            fadeIn = moveArrows = true;
-
-            range = 6;
-            bufferCapacity = 20;
-            speed = 2.5f;
-            displayedSpeed = 22f;
-
-            arrowSpacing = 6f;
-        }};
         stariumBridge = new CustomItemBridge("starium-bridge"){{
             requirements(Category.distribution, with(copper, 8, titanium, 6, starium, 2));
 
             fadeIn = moveArrows = true;
 
-            range = 7;
+            range = 6;
             bufferCapacity = 40;
             speed = 3f;
             displayedSpeed = 16.5f;
+
+            arrowSpacing = 6f;
+        }};
+        thoriumBridge = new CustomItemBridge("thorium-bridge"){{
+            requirements(Category.distribution, with(copper, 8, thorium, 6));
+
+            fadeIn = moveArrows = true;
+
+            range = 7;
+            bufferCapacity = 20;
+            speed = 2.5f;
+            displayedSpeed = 22f;
 
             arrowSpacing = 6f;
         }};

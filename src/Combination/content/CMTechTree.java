@@ -83,14 +83,16 @@ public class CMTechTree extends TechTree{
         );
         addNode(Blocks.titaniumConveyor, () -> {
             node(titaniumBridge, () ->
-                node(stariumBridge, () ->
-                    moveNode(Blocks.phaseConveyor, () ->
-                        node(stariumAlloyBridge)
+                    node(stariumBridge, () ->
+                            node(thoriumBridge, () ->
+                                    moveNode(Blocks.phaseConveyor, () ->
+                                            node(stariumAlloyBridge)
+                                    )
+                            )
                     )
-                )
             );
             node(stariumConveyor, () ->
-                node(stariumJunction)
+                    node(stariumJunction)
             );
         });
         addNode(Blocks.plastaniumConveyor, () ->
