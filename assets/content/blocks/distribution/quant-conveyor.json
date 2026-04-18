@@ -1,6 +1,6 @@
 {
     "type": "ItemBridge",
-    "name": "Armored Phase Conveyor",
+    "name": "Quant Conveyor",
     "description": "Stronger and longer reach than the standard Phase Conveyor.",
     "category": "distribution",
     "health": 200,

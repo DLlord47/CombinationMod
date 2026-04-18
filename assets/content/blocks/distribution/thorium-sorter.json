@@ -1,15 +1,14 @@
 {
-    "type": "OverflowGate",
-    "name": "Armored Overflow Gate",
-    "description": "Stronger than the standard Overflow Gate.",
+    "type": "Sorter",
+    "name": "Thorium Sorter",
+    "description": "Stronger than the standard Sorter.",
     "category": "distribution",
     "health": 200,
-    "inverted": false,
     "buildCostMultiplier": 3,
     "requirements": [
         {
             "item": "copper",
-            "amount": 4
+            "amount": 2
         },
         {
             "item": "lead",
@@ -17,8 +16,8 @@
         },
         {
             "item": "thorium",
-            "amount": 3
+            "amount": 2
         }
     ],
-    "research": "overflow-gate"
+    "research": "sorter"
 }

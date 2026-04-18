@@ -1,7 +1,7 @@
 {
     "type": "Junction",
-    "name": "Armored Surge Junction",
-    "description": "Stronger and faster than the Armored Junction.",
+    "name": "Surge Junction",
+    "description": "Stronger and faster than the Thorium Junction.",
     "category": "distribution",
     "health": 225,
     "buildCostMultiplier": 6,
@@ -17,5 +17,5 @@
             "amount": 2
         }
     ],
-    "research": "distribution-armored-junction"
+    "research": "thorium-junction"
 }

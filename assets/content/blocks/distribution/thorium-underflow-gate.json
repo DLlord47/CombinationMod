@@ -1,6 +1,6 @@
 {
     "type": "OverflowGate",
-    "name": "Armored Underflow Gate",
+    "name": "Thorium Underflow Gate",
     "description": "Stronger than the standard Underflow Gate.",
     "category": "distribution",
     "health": 200,

@@ -84,27 +84,20 @@ public class CMTechTree extends TechTree{
         addNode(Blocks.titaniumConveyor, () -> {
             node(titaniumBridge, () ->
                     node(stariumBridge, () ->
-                            node(thoriumBridge, () ->
-                                    moveNode(Blocks.phaseConveyor, () ->
-                                            node(stariumAlloyBridge)
-                                    )
+                            node(thoriumBridge//, () ->
+//                                    moveNode(Blocks.phaseConveyor, () ->
+//                                            node(stariumAlloyBridge)
+//                                    )
                             )
                     )
             );
-            node(stariumConveyor, () ->
-                    node(stariumJunction)
-            );
+//            node(stariumConveyor, () ->
+//                    node(stariumJunction)
+//            );
         });
+        // distribution
         addNode(Blocks.plastaniumConveyor, () ->
             node(stariumAlloyConveyor)
-        );
-        addNode(Blocks.pulseConduit, () ->
-            node(stariumConduit)
-        );
-        addNode(Blocks.bridgeConduit, () ->
-            node(titaniumBridgeConduit, () ->
-                node(stariumBridgeConduit)
-            )
         );
         addNode(Blocks.itemBridge, () ->
             node(crate, () -> {
@@ -113,6 +106,14 @@ public class CMTechTree extends TechTree{
                     moveNode(Blocks.unloader)
                 );
             })
+        );
+        addNode(Blocks.pulseConduit, () ->
+                node(stariumConduit)
+        );
+        addNode(Blocks.bridgeConduit, () ->
+                node(titaniumBridgeConduit, () ->
+                        node(stariumBridgeConduit)
+                )
         );
         addNode(Blocks.cryofluidMixer, () ->
             node(cryofluidStirrer, () ->

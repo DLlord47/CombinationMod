@@ -1,6 +1,6 @@
 {
     "type": "Router",
-    "name": "Armored Router",
+    "name": "Thorium Router",
     "description": "Stronger and faster than the standard Router.\nWarning! Item throughput limited by FPS.",
     "category": "distribution",
     "health": 200,

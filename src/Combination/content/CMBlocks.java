@@ -45,7 +45,7 @@ public class CMBlocks {
     grassWater, liquidReurium,
 
     //distribution - serpulo
-    stariumConveyor, stariumAlloyConveyor, stariumJunction, titaniumBridge, stariumBridge, stariumAlloyBridge, thoriumBridge,
+    /*stariumConveyor,*/ stariumAlloyConveyor, stariumBridge, plastaniumBridge, /*stariumJunction,*/ titaniumBridge, thoriumBridge, //stariumAlloyBridge
     stariumConduit, titaniumBridgeConduit, stariumBridgeConduit,
 
     //distribution - erekir
@@ -143,19 +143,19 @@ public class CMBlocks {
             oreThreshold = 0.893f;
             oreScale = 25.1f;
         }};
-
+        // distribution
         microUnloader = new Unloader("micro-unloader"){{
             requirements(Category.distribution, with(copper, 22, lead, 5, graphite, 5));
 
             speed = 15f;
         }};
-        stariumConveyor = new Conveyor("starium-conveyor"){{
-            requirements(Category.distribution, with(lead, 2, titanium, 2, starium, 1));
-
-            speed = 9f / 60f;
-            displayedSpeed = 20;
-            health = 60;
-        }};
+//        stariumConveyor = new Conveyor("starium-conveyor"){{
+//            requirements(Category.distribution, with(lead, 2, titanium, 2, starium, 1));
+//
+//            speed = 9f / 60f;
+//            displayedSpeed = 20;
+//            health = 60;
+//        }};
         stariumAlloyConveyor = new StackConveyor("starium-alloy-conveyor"){{
             requirements(Category.distribution, with(silicon, 2, plastanium, 1, starium, 1));
 
@@ -163,12 +163,26 @@ public class CMBlocks {
             itemCapacity = 20;
             health = 105;
         }};
-        stariumJunction = new Junction("starium-junction"){{
-            requirements(Category.distribution, with(copper, 4, titanium, 3, starium, 3));
-
-            speed = 17.5f;
-            itemCapacity = 10;
+        stariumBridge = new StackBridge("starium-bridge"){{
+            range = 7;
+            speed = 0.2f;
+            stackCapacity = 20;
+            itemCapacity = 30;
+            requirements(Category.distribution, ItemStack.with(silicon, 12, plastanium, 6, starium, 6));
         }};
+        plastaniumBridge = new StackBridge("plastanium-bridge"){{
+            range = 5;
+            speed = 0.2f;
+            stackCapacity = 10;
+            itemCapacity = 30;
+            requirements(Category.distribution, ItemStack.with(graphite, 6, silicon, 6, plastanium, 6, metaglass, 4));
+        }};
+//        stariumJunction = new Junction("starium-junction"){{
+//            requirements(Category.distribution, with(copper, 4, titanium, 3, starium, 3));
+//
+//            speed = 17.5f;
+//            itemCapacity = 10;
+//        }};
         titaniumBridge = new BufferedItemBridge("titanium-bridge"){{
             requirements(Category.distribution, with(copper, 6, lead, 6, titanium, 4));
 
@@ -176,18 +190,6 @@ public class CMBlocks {
 
             range = 5;
             bufferCapacity = 22;
-
-            arrowSpacing = 6f;
-        }};
-        stariumBridge = new CustomItemBridge("starium-bridge"){{
-            requirements(Category.distribution, with(copper, 8, titanium, 6, starium, 2));
-
-            fadeIn = moveArrows = true;
-
-            range = 6;
-            bufferCapacity = 40;
-            speed = 3f;
-            displayedSpeed = 16.5f;
 
             arrowSpacing = 6f;
         }};
@@ -203,17 +205,17 @@ public class CMBlocks {
 
             arrowSpacing = 6f;
         }};
-        stariumAlloyBridge = new ItemBridge("starium-alloy-bridge"){{
-            requirements(Category.distribution, with(titanium, 8, silicon, 8, stariumAlloy, 4));
-            consumePower(0.25f);
-
-            hasPower = pulse = true;
-
-            range = 18;
-
-            arrowPeriod = 0.9f;
-            arrowTimeScl = 2.75f;
-        }};
+//        stariumAlloyBridge = new ItemBridge("starium-alloy-bridge"){{
+//            requirements(Category.distribution, with(titanium, 8, silicon, 8, stariumAlloy, 4));
+//            consumePower(0.25f);
+//
+//            hasPower = pulse = true;
+//
+//            range = 18;
+//
+//            arrowPeriod = 0.9f;
+//            arrowTimeScl = 2.75f;
+//        }};
         layeredUnloader = new Unloader("layered-unloader"){{
             requirements(Category.distribution, with(titanium, 50, silicon, 60, graphite, 10));
 
@@ -246,7 +248,7 @@ public class CMBlocks {
 
             arrowSpacing = 6f;
         }};
-
+        // dist end
         tungstenConveyor = new StackConveyor("tungsten-conveyor"){{
             requirements(Category.distribution, with(graphite, 4, tungsten, 2));
 

@@ -1,6 +1,6 @@
 {
     "type": "Junction",
-    "name": "Armored Junction",
+    "name": "Thorium Junction",
     "description": "Stronger and faster than the standard Junction.",
     "category": "distribution",
     "health": 150,

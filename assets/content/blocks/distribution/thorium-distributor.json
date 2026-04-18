@@ -1,6 +1,6 @@
 {
     "type": "Router",
-    "name": "Armored Distributor",
+    "name": "Thorium Distributor",
     "description": "Stronger and faster than the standard Distributor.\nWarning! Item throughput limited by FPS.",
     "category": "distribution",
     "health": 800,
