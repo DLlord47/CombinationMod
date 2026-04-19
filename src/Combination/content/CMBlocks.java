@@ -45,7 +45,8 @@ public class CMBlocks {
     grassWater, liquidReurium,
 
     //distribution - serpulo
-    /*stariumConveyor,*/ stariumAlloyConveyor, stariumBridge, plastaniumBridge, /*stariumJunction,*/ titaniumBridge, thoriumBridge, //stariumAlloyBridge
+    stariumAlloyConveyor, surgeAlloyRail, stariumBridge, plastaniumBridge, surgeRailBridge,
+    titaniumBridge, thoriumBridge,
     stariumConduit, titaniumBridgeConduit, stariumBridgeConduit,
 
     //distribution - erekir
@@ -67,7 +68,7 @@ public class CMBlocks {
 
     //production (custom res) - serpulo
     mixingFoundry, molecularReassembler, stariumRefiner, peridotiumEnricher, lumiumSmelter,
-    freezer, oxygenLiquefier, oilPurifier, oilRefiner, thermiteMixer,
+    oxygenLiquefier, oilPurifier, oilRefiner, thermiteMixer,
 
     //power - serpulo
     steamTurbine, peridotiumReactor, peridotiumGenerator, lumiumReactor,
@@ -149,73 +150,58 @@ public class CMBlocks {
 
             speed = 15f;
         }};
-//        stariumConveyor = new Conveyor("starium-conveyor"){{
-//            requirements(Category.distribution, with(lead, 2, titanium, 2, starium, 1));
-//
-//            speed = 9f / 60f;
-//            displayedSpeed = 20;
-//            health = 60;
-//        }};
         stariumAlloyConveyor = new StackConveyor("starium-alloy-conveyor"){{
             requirements(Category.distribution, with(silicon, 2, plastanium, 1, starium, 1));
-
             speed = 5f / 60f;
             itemCapacity = 20;
             health = 105;
         }};
-        stariumBridge = new StackBridge("starium-bridge"){{
-            range = 7;
-            speed = 0.2f;
-            stackCapacity = 20;
-            itemCapacity = 30;
-            requirements(Category.distribution, ItemStack.with(silicon, 12, plastanium, 6, starium, 6));
+        surgeAlloyRail = new StackConveyor("surge-alloy-rail") {{
+            requirements(Category.distribution, with(silicon, 2, plastanium, 2, titanium, 1, surgeAlloy, 1));
+            speed = 5f / 60f;
+            itemCapacity = 40;
+            health = 200;
         }};
         plastaniumBridge = new StackBridge("plastanium-bridge"){{
             range = 5;
-            speed = 0.2f;
+            speed = 40f;
+            displayedSpeed = 40f;
             stackCapacity = 10;
-            itemCapacity = 30;
+            itemCapacity = 20;
             requirements(Category.distribution, ItemStack.with(graphite, 6, silicon, 6, plastanium, 6, metaglass, 4));
         }};
-//        stariumJunction = new Junction("starium-junction"){{
-//            requirements(Category.distribution, with(copper, 4, titanium, 3, starium, 3));
-//
-//            speed = 17.5f;
-//            itemCapacity = 10;
-//        }};
+        stariumBridge = new StackBridge("starium-bridge"){{
+            range = 7;
+            speed = 100f;
+            displayedSpeed = 100f;
+            stackCapacity = 20;
+            itemCapacity = 40;
+            requirements(Category.distribution, ItemStack.with(silicon, 12, plastanium, 6, starium, 6));
+        }};
+        surgeRailBridge = new StackBridge("surge-rail-bridge"){{
+            range = 7;
+            speed = 400f;
+            displayedSpeed = 400f;
+            stackCapacity = 40;
+            itemCapacity = 80;
+            requirements(Category.distribution, ItemStack.with(silicon, 12, plastanium, 6, surgeAlloy, 6, metaglass, 4));
+        }};
         titaniumBridge = new BufferedItemBridge("titanium-bridge"){{
             requirements(Category.distribution, with(copper, 6, lead, 6, titanium, 4));
-
             fadeIn = moveArrows = true;
-
             range = 5;
             bufferCapacity = 22;
-
             arrowSpacing = 6f;
         }};
         thoriumBridge = new CustomItemBridge("thorium-bridge"){{
             requirements(Category.distribution, with(copper, 8, thorium, 6));
-
             fadeIn = moveArrows = true;
-
             range = 7;
             bufferCapacity = 20;
             speed = 2.5f;
             displayedSpeed = 22f;
-
             arrowSpacing = 6f;
         }};
-//        stariumAlloyBridge = new ItemBridge("starium-alloy-bridge"){{
-//            requirements(Category.distribution, with(titanium, 8, silicon, 8, stariumAlloy, 4));
-//            consumePower(0.25f);
-//
-//            hasPower = pulse = true;
-//
-//            range = 18;
-//
-//            arrowPeriod = 0.9f;
-//            arrowTimeScl = 2.75f;
-//        }};
         layeredUnloader = new Unloader("layered-unloader"){{
             requirements(Category.distribution, with(titanium, 50, silicon, 60, graphite, 10));
 
@@ -622,23 +608,10 @@ public class CMBlocks {
                 new DrawFlame()
             );
         }};
-        freezer = new GenericCrafter("freezer"){{
-            requirements(Category.crafting, with(lead, 75, metaglass, 30, silicon, 15));
-            consumeLiquid(water, 0.75f);
-            consumePower(2.5f);
-
-            hasItems = true;
-
-            size = 2;
-            craftTime = 210f;
-            outputItem = new ItemStack(itemIce, 3);
-
-            craftEffect = Fx.pulverizeSmall;
-        }};
         oxygenLiquefier = new GenericCrafter("oxygen-liquefier"){{
             requirements(Category.crafting, with(lead, 120, metaglass, 70, silicon, 60, titanium, 40));
             consumeLiquid(cryofluid, 0.05f);
-            consumeItem(itemIce);
+            consumeItem(starium);
             consumePower(1.5f);
 
             size = 2;

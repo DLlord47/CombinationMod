@@ -51,7 +51,7 @@
             "length": 0,
             "lifetime": 15,
             "interp": "swingIn",
-            "region": "mod-combination-spikething",
+            "region": "cm-spikething",
             "offsetX": 8,
             "sizeFrom": 25,
             "sizeTo": 1,
@@ -224,7 +224,7 @@
       "status": "blasted"
     },
     "metaglass": {
-      "sprite": "mod-combination-gauss-bullet",
+      "sprite": "cm-gauss-bullet",
       "speed": 8,
       "height": 42,
       "width": 25,
@@ -248,7 +248,7 @@
             "length": 0,
             "lifetime": 15,
             "interp": "swingIn",
-            "region": "mod-combination-spikething",
+            "region": "cm-spikething",
             "offsetX": 8,
             "sizeFrom": 25,
             "sizeTo": 1,
@@ -404,7 +404,7 @@
       }
     },
     "surge-alloy": {
-      "sprite": "mod-combination-gauss-bullet",
+      "sprite": "cm-gauss-bullet",
       "status": "surge-charge",
       "statusDuration": "100",
       "speed": 8,
@@ -429,7 +429,7 @@
             "length": 0,
             "lifetime": 15,
             "interp": "swingIn",
-            "region": "mod-combination-spikething",
+            "region": "cm-spikething",
             "offsetX": 8,
             "sizeFrom": 25,
             "sizeTo": 1,

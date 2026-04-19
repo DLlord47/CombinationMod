@@ -7,17 +7,9 @@ import mindustry.type.*;
 public class CMItems {
     public static Item
 
-    peridotium, starium, lumium, stariumAlloy, enrichedPeridotium, thermiteCompound, itemIce;
+    peridotium, starium, lumium, stariumAlloy, enrichedPeridotium, thermiteCompound;
 
     public static void load(){
-        itemIce = new Item("ice", Color.valueOf("C2BFFBFF")){{
-            lowPriority = true;
-
-            shownPlanets.add(Planets.serpulo);
-
-            hardness = 2;
-        }};
-
         starium = new Item("starium", Color.valueOf("4c4379")){{
             shownPlanets.add(Planets.serpulo);
 

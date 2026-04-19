@@ -38,7 +38,7 @@ public class StackBridge extends BufferedItemBridge {
             }
 
             if (stackItem != null && stackAmount > 0) {
-                if (timer(timerAccept, 4 / timeScale) && other.acceptItem(this, stackItem)) {
+                if (timer.get(timerAccept, 60/speed) && other.acceptItem(this, stackItem)) {
                     other.handleStack(stackItem, stackAmount, this);
                     moved = true;
                     stackItem = null;
