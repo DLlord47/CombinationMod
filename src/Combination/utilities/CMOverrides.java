@@ -36,10 +36,6 @@ public class CMOverrides {
         Log.info("[EI] Overriding content stats.");
         // manual overrides
         addBullet(tsunami, reurium, tsunamiReuriumBullet);
-        addBullet(hail, itemIce, hailIceBullet);
-        addBullet(ripple, itemIce, rippleIceBullet);
-
-        ice.itemDrop = itemIce;
 
         if(settings.getBool("ei-replaceroot", false)){
             ((CoreBlock) coreShard).isFirstTier = false;

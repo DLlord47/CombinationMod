@@ -195,14 +195,6 @@ public class CMTechTree extends TechTree{
                 ),
                 () -> {}
             );
-            node(
-                freezer,
-                Seq.with(
-                    new Objectives.Research(Liquids.water),
-                    new Objectives.Research(Blocks.combustionGenerator)
-                ),
-                () -> {}
-            );
         });
         addNode(Blocks.plastaniumCompressor, () ->
             node(plastaniumCondenser)
@@ -369,7 +361,6 @@ public class CMTechTree extends TechTree{
             nodeProduce(liquidOxygen, () -> {})
         );
         addNode(Liquids.water, () -> {
-            nodeProduce(itemIce, () -> {});
             nodeProduce(steam, () -> {});
         });
 

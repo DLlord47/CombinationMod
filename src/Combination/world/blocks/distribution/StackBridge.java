@@ -16,28 +16,33 @@ public class StackBridge extends BufferedItemBridge {
         bufferCapacity = stackCapacity;
     }
 
+
     public class StackBridgeBuild extends BufferedItemBridgeBuild {
         public Item stackItem = null;
         public int stackAmount = 0;
 
         @Override
         public void updateTransport(Building other) {
-            if (stackItem != null && stackAmount < stackCapacity && items.total() > 0) {
-                Item take = items.first();
-                if (take == stackItem) {
-                    int canTake = Math.min(stackCapacity - stackAmount, items.get(take));
-                    items.remove(take, canTake);
+            // НАКОПЛЕНИЕ ПАЧКИ - забираем ВСЕ предметы из хранилища разом
+            if (items.total() > 0) {
+                Item firstItem = items.first();
+
+                // Если пачки нет - создаём
+                if (stackItem == null) {
+                    stackItem = firstItem;
+                    stackAmount = 0;
+                }
+
+                // Если предметы совпадают - забираем всё, что есть (до capacity)
+                if (stackItem == firstItem && stackAmount < stackCapacity) {
+                    int canTake = Math.min(stackCapacity - stackAmount, items.get(stackItem));
+                    items.remove(stackItem, canTake);
                     stackAmount += canTake;
                 }
             }
 
-            if (stackItem == null && items.total() > 0) {
-                stackItem = items.first();
-                stackAmount = Math.min(stackCapacity, items.get(stackItem));
-                items.remove(stackItem, stackAmount);
-            }
-
-            if (stackItem != null && stackAmount > 0) {
+            // ОТПРАВКА ПАЧКИ
+            if (stackItem != null && stackAmount >= stackCapacity) { // Отправляем только когда пачка полная!
                 if (timer.get(timerAccept, 60/speed) && other.acceptItem(this, stackItem)) {
                     other.handleStack(stackItem, stackAmount, this);
                     moved = true;
@@ -47,16 +52,19 @@ public class StackBridge extends BufferedItemBridge {
             }
         }
 
+        // Принимаем пачку целиком
         @Override
         public void handleStack(Item item, int amount, Teamc source) {
             items.add(item, amount);
         }
 
+        // Разрешаем принимать предметы только если они совместимы с текущей пачкой
         @Override
         public boolean acceptItem(Building source, Item item) {
             return (stackItem == null || stackItem == item) &&
-                    items.total() + (stackAmount > 0 ? stackCapacity - stackAmount : 0) < itemCapacity;
+                    items.total() + (stackItem == null ? 0 : stackCapacity - stackAmount) < itemCapacity;
         }
+
 
         @Override
         public void write(Writes write) {
